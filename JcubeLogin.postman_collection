@@ -1,0 +1,67 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Jcube",
+		"_postman_id": "f0aef3b1-fa5a-b035-3185-b14635e31dd7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"",
+							"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+							"",
+							"",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://203.223.189.158:8084/Login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "PublicIP",
+							"value": "203.223.189.157",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "raja@7575",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
